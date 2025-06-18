@@ -1,0 +1,41 @@
+# Tool application
+
+In this section, we will use the human infectious IEDB dataset as an example showing how we apply each tool on the data. 
+
+## GIANA
+GIANA can be installed from https://github.com/s175573/GIANA. 
+
+```
+# read the processed IEDB file
+tmp <- readRDS("path_to_IEDB_data")
+d_giana <- data.frame(aminoAcid=tmp$Beta_cdr3,	vGeneName=tmp$Beta_Vgene,	`count..templates.reads.`=1) 
+# save the data for GIANA
+write.table(d_giana, paste0("../data/GIANA/", "human_infectious", ".tsv"), sep = "\t", row.names = FALSE, quote = FALSE)
+```
+Then go to the installed GIANA folder and run the following code in the terminal
+```
+python /GIANA4.py -f ../data/GIANA/chuman_infectious.tsv -o ../out/GIANA/
+```
+##GLIPH2
+```
+# read the processed IEDB file
+tmp <- readRDS("path_to_IEDB_data")
+d_gliph <- data.frame(CDR3b=tmp$Beta_cdr3, TRBV=tmp$Beta_Vgene, TRBJ=tmp$Beta_Jgene, CDR3a=tmp$Alpha_cdr3,
+                        `subject:condition`=NA, count=1) %>% 
+    distinct(CDR3b, .keep_all = TRUE)
+write.table(d_gliph, paste0("../data/GLIPH2/", "human_infectious", ".tsv"), 
+              sep = "\t", row.names = FALSE, quote = FALSE)
+```
+We run GLIPH2 through its website at <http://50.255.35.37:8080/>. 
+
+## TCRex
+```
+# read the processed IEDB file
+tmp <- readRDS("path_to_IEDB_data")
+d_tcrex <- data.frame(CDR3_beta=tmp$Beta_cdr3,	TRBJ_gene=tmp$Beta_Jgene,	TRBV_gene=tmp$Beta_Vgene) 
+write.table(d_tcrex, paste0("../data/TCRex/", "human_infectious", ".tsv"), 
+              sep = "\t", row.names = FALSE, quote = FALSE)
+```
+We run TCRex through its website at <https://tcrex.biodatamining.be/>.
+
+## tcrbase

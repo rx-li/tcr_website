@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tool application &mdash; TCR Clustering Benchmark  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Data process" href="Data%20process.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TCR Clustering Benchmark
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Data Process:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data%20process.html">Data process</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tool application:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tool application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#giana">GIANA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcrex">TCRex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcrbase">tcrbase</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TCR Clustering Benchmark</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Tool application</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Data/Tool application.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tool-application">
+<h1>Tool application<a class="headerlink" href="#tool-application" title="Link to this heading"></a></h1>
+<p>In this section, we will use the human infectious IEDB dataset as an example showing how we apply each tool on the data.</p>
+<section id="giana">
+<h2>GIANA<a class="headerlink" href="#giana" title="Link to this heading"></a></h2>
+<p>GIANA can be installed from https://github.com/s175573/GIANA.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_giana &lt;- data.frame(aminoAcid=tmp$Beta_cdr3,	vGeneName=tmp$Beta_Vgene,	`count..templates.reads.`=1) 
+# save the data for GIANA
+write.table(d_giana, paste0(&quot;../data/GIANA/&quot;, &quot;human_infectious&quot;, &quot;.tsv&quot;), sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>Then go to the installed GIANA folder and run the following code in the terminal</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">/</span><span class="n">GIANA4</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">GIANA</span><span class="o">/</span><span class="n">chuman_infectious</span><span class="o">.</span><span class="n">tsv</span> <span class="o">-</span><span class="n">o</span> <span class="o">../</span><span class="n">out</span><span class="o">/</span><span class="n">GIANA</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>##GLIPH2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_gliph &lt;- data.frame(CDR3b=tmp$Beta_cdr3, TRBV=tmp$Beta_Vgene, TRBJ=tmp$Beta_Jgene, CDR3a=tmp$Alpha_cdr3,
+                        `subject:condition`=NA, count=1) %&gt;% 
+    distinct(CDR3b, .keep_all = TRUE)
+write.table(d_gliph, paste0(&quot;../data/GLIPH2/&quot;, &quot;human_infectious&quot;, &quot;.tsv&quot;), 
+              sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>We run GLIPH2 through its website at <a class="reference external" href="http://50.255.35.37:8080/">http://50.255.35.37:8080/</a>.</p>
+</section>
+<section id="tcrex">
+<h2>TCRex<a class="headerlink" href="#tcrex" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_tcrex &lt;- data.frame(CDR3_beta=tmp$Beta_cdr3,	TRBJ_gene=tmp$Beta_Jgene,	TRBV_gene=tmp$Beta_Vgene) 
+write.table(d_tcrex, paste0(&quot;../data/TCRex/&quot;, &quot;human_infectious&quot;, &quot;.tsv&quot;), 
+              sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>We run TCRex through its website at <a class="reference external" href="https://tcrex.biodatamining.be/">https://tcrex.biodatamining.be/</a>.</p>
+</section>
+<section id="tcrbase">
+<h2>tcrbase<a class="headerlink" href="#tcrbase" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Data%20process.html" class="btn btn-neutral float-left" title="Data process" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

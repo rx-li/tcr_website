@@ -17,3 +17,8 @@ for benchmarking T Cell Receptor (TCR) Clustering tools.
    Data/Data process
 
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Tool application:
+
+   Data/Tool application
