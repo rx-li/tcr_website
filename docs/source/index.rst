@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 TCR Clustering Benchmarking Code
-======================================
+================================
 
 This website provides the original code used to conduct simulations and real data analyses 
 for benchmarking T Cell Receptor (TCR) Clustering tools. 
@@ -16,9 +16,14 @@ for benchmarking T Cell Receptor (TCR) Clustering tools.
 
    Data/Data process
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Tool application:
 
    Data/Tool application
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Results process:
+
+   Data/Simulation results process

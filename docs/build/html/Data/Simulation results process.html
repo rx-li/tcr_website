@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>simulation results process &mdash; TCR Clustering Benchmark  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="GIANA and ClusTCR" href="Tool%20application.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            TCR Clustering Benchmark
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Data Process:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data%20process.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20process.html#real-data">Real data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tool application:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html">GIANA and ClusTCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#gliph2">GLIPH2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#tcrex">TCRex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#tcrbase">TCRbase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#tcrmatch">TCRMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#pmtnet">pMTnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#sete">SETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tool%20application.html#tcrdist3">tcrdist3</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Results process:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">simulation results process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#set-up-the-code-before-we-process-the-result-from-each-tool">Set up the code before we process the result from each tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#giana">GIANA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ismart">iSMART</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clusttcr">clustTCR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcrex">TCRex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gliph2">GLIPH2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pmtnet">pMTnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sete">SETE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcrdist3">tcrdist3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tcrmatch">TCRmatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-plot">Create the plot</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TCR Clustering Benchmark</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">simulation results process</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Data/Simulation results process.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="simulation-results-process">
+<h1>simulation results process<a class="headerlink" href="#simulation-results-process" title="Link to this heading"></a></h1>
+<p>In this section, we will still use the human infectious dataset as an example
+to show how we process the results getting from different tools.</p>
+<section id="set-up-the-code-before-we-process-the-result-from-each-tool">
+<h2>Set up the code before we process the result from each tool<a class="headerlink" href="#set-up-the-code-before-we-process-the-result-from-each-tool" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># load libraries </span>
+<span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">funtimes</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">aricode</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">&lt;-</span> <span class="s2">&quot;human_infectious.csv&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="giana">
+<h2>GIANA<a class="headerlink" href="#giana" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.table(paste0(&quot;../out/GIANA/&quot;, f), sep=&quot;\t&quot;)
+# read the input file 
+d_input &lt;- read.table(paste0(&quot;../data/GIANA/&quot;, f), sep=&quot;\t&quot;)
+
+d &lt;- d_re %&gt;% left_join(d_inout, by = c(&quot;V1&quot; = &quot;Beta_cdr3&quot;))
+pct &lt;- nrow(d) / nrow(d_input)
+prty &lt;- purity(d$Epitope, d$V2)$pur
+ari &lt;- ARI(d$Epitope, d$V2)
+nmi &lt;- NMI(d$Epitope, d$V2)
+
+giana_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="ismart">
+<h2>iSMART<a class="headerlink" href="#ismart" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.table(paste0(&quot;../out/iSMART/&quot;, f), sep=&quot;\t&quot;, header=1)
+# read the input file 
+d_input &lt;- read.table(paste0(&quot;../data/GIANA/&quot;, f), sep=&quot;\t&quot;)
+
+d &lt;- d_re %&gt;% left_join(d_input, by = c(&quot;aminoAcid&quot; = &quot;Beta_cdr3&quot;))
+pct &lt;- nrow(d) / nrow(d_input)
+d &lt;- d[!is.na(d$Epitope), ]
+prty &lt;- purity(d$Epitope, d$Group)$pur
+ari &lt;- ARI(d$Epitope, d$Group)
+nmi &lt;- NMI(d$Epitope, d$Group)
+
+ismart_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="clusttcr">
+<h2>clustTCR<a class="headerlink" href="#clusttcr" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.table(paste0(&quot;../out/clusTCR/&quot;, f), sep=&quot;\t&quot;, header=1)
+# read the input file 
+d_input &lt;- read.table(paste0(&quot;../data/GIANA/&quot;, f), sep=&quot;\t&quot;)
+
+d &lt;- d_re %&gt;% left_join(d_input, by = c(&quot;aminoAcid&quot; = &quot;Beta_cdr3&quot;))
+pct &lt;- nrow(d) / nrow(d_input)
+d &lt;- d[!is.na(d$Epitope), ]
+prty &lt;- purity(d$Epitope, d$Group)$pur
+ari &lt;- ARI(d$Epitope, d$Group)
+nmi &lt;- NMI(d$Epitope, d$Group)
+
+clustcr_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="tcrex">
+<h2>TCRex<a class="headerlink" href="#tcrex" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.table(paste0(&quot;../out/cTCRex/&quot;, f), sep=&quot;\t&quot;, header=1)
+# read the input file 
+d_input &lt;- read.table(paste0(&quot;../data/TCRex/&quot;, f), sep=&quot;\t&quot;)
+
+d &lt;- d_re %&gt;% group_by(CDR3_beta) %&gt;% arrange(desc(score)) %&gt;% slice(1)
+d &lt;- d %&gt;% left_join(d_input, by = c(&quot;CDR3_beta&quot; = &quot;Beta_cdr3&quot;))
+  
+pct &lt;- nrow(d) / nrow(d_input)
+d &lt;- d[!is.na(d$Epitope), ]
+prty &lt;- purity(d$Epitope, d$epitope)$pur
+ari &lt;- ARI(d$Epitope, d$epitope)
+nmi &lt;- NMI(d$Epitope, d$epitope)
+
+tcrex_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="gliph2">
+<h2>GLIPH2<a class="headerlink" href="#gliph2" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.csv(paste0(&quot;../out/GLIPH2/&quot;, f))
+# read the input file 
+d_input &lt;- read.table(paste0(&quot;../data/GLIPH2/&quot;, f), sep=&quot;\t&quot;)
+
+d &lt;- d_re %&gt;% left_join(d_input, by = c(&quot;TcRb&quot; = &quot;Beta_cdr3&quot;))
+pct &lt;- nrow(d) / nrow(d_input)
+d &lt;- d[!is.na(d$Epitope), ]
+prty &lt;- purity(d$Epitope, d$pattern)$pur
+ari &lt;- ARI(d$Epitope, d$pattern)
+nmi &lt;- NMI(d$Epitope, d$pattern)
+
+gliph2_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="tcr-bert">
+<h2>TCR-BERT<a class="headerlink" href="#tcr-bert" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.csv(paste0(&quot;../out/TCRbert/&quot;, x), header=FALSE)
+# read the input file 
+d_input &lt;- read.table(paste0(&quot;../data/TCRbert/&quot;, f), sep=&quot;\t&quot;)
+
+splitList &lt;- split(d_re, 1:nrow(d_re))
+splitList &lt;- lapply(seq(splitList), function(i) data.frame(cdr3=unlist(splitList[[i]]), group=i))
+re_bert &lt;- do.call(rbind, splitList)
+re_bert &lt;- re_bert[re_bert$cdr3 != &quot;&quot;, ]
+d &lt;- re_bert %&gt;% left_join(d_input, by = c(&quot;cdr3&quot; = &quot;Beta_cdr3&quot;))
+pct &lt;- nrow(d) / nrow(input_f[[i]])
+d &lt;- d[!is.na(d$Epitope), ]
+prty &lt;- purity(d$Epitope, d$group)$pur
+ari &lt;- ARI(d$Epitope, d$group)
+nmi &lt;- NMI(d$Epitope, d$group)
+
+tcrbert_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="pmtnet">
+<h2>pMTnet<a class="headerlink" href="#pmtnet" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.csv(paste0(&quot;../out/pMTnet/&quot;, x))
+# read the input file 
+d_input &lt;- read.csv(paste0(&quot;../data/pMTnet/&quot;, x))
+
+d &lt;- d_re %&gt;% group_by(CDR3) %&gt;% arrange(Rank) %&gt;% slice(1)
+d &lt;- d %&gt;% left_join(d_input, by = c(&quot;CDR3&quot; = &quot;Beta_cdr3&quot;))
+
+pct &lt;- nrow(d) / nrow(d_input)
+d &lt;- d[!is.na(d$Epitope), ]
+prty &lt;- purity(d$Epitope, d$Antigen)$pur
+ari &lt;- ARI(d$Epitope, d$Antigen)
+nmi &lt;- NMI(d$Epitope, d$Antigen)
+
+pmtnet_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="sete">
+<h2>SETE<a class="headerlink" href="#sete" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.csv(paste0(&quot;../out/SETE/&quot;, x))
+# read the input file 
+d_input &lt;- read.csv(paste0(&quot;../data/SETE/&quot;, x))
+
+d &lt;- d_re
+pct &lt;- nrow(d) / nrow(d_input)
+prty &lt;- purity(d$true, d$pred)$pur
+ari &lt;- ARI(d$true, d$pred)
+nmi &lt;- NMI(d$true, d$pred)
+ 
+sete_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="nettcr2-0">
+<h2>NetTCR2.0<a class="headerlink" href="#nettcr2-0" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.csv(paste0(&quot;../out/NetTCR/&quot;, x))
+# read the input file 
+d_input &lt;- read.csv(paste0(&quot;../data/NetTCR/&quot;, x))
+
+d_re$group &lt;- paste0(d_re$CDR3a, &quot;+&quot;, re_nettcr$CDR3b)
+d &lt;- re_nettcr %&gt;% group_by(group) %&gt;% arrange(desc(prediction)) %&gt;% slice(1)
+  
+d_input &lt;- d_input %&gt;% mutate(CDR3a=sub(&quot;.&quot;, &quot;&quot;, data_f[[i]]$Alpha_cdr3)) %&gt;% 
+                                          mutate(CDR3b=sub(&quot;.&quot;, &quot;&quot;, data_f[[i]]$Beta_cdr3))
+d &lt;- d %&gt;% left_join(d_input)
+  
+pct &lt;- nrow(d) / nrow(d_input)
+d &lt;- d[!is.na(d$Epitope), ]
+prty &lt;- purity(d$Epitope, d$peptide)$pur
+ari &lt;- ARI(d$Epitope, d$peptide)
+nmi &lt;- NMI(d$Epitope, d$peptide)
+
+nettcr_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="tcrdist3">
+<h2>tcrdist3<a class="headerlink" href="#tcrdist3" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.table(paste0(&quot;../out/tcrdist3/&quot;, x), sep = &quot;\t&quot;, header=1)
+# read the input file 
+d_input &lt;- read.csv(paste0(&quot;../data/tcrdist3/&quot;, x))
+
+d &lt;- d_re
+pct &lt;- nrow(d) / nrow(d_input)
+prty &lt;- purity(d$true, d$pred)$pur
+ari &lt;- ARI(d$true, d$pred)
+nmi &lt;- NMI(d$true, d$pred)
+ 
+tcrdist3_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="tcrmatch">
+<h2>TCRmatch<a class="headerlink" href="#tcrmatch" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the results
+d_re &lt;- read.table(paste0(&quot;../out/cTCRex/&quot;, f), sep=&quot;\t&quot;, header=1)
+# read the input file 
+d_input &lt;- read.table(paste0(&quot;../data/TCRex/&quot;, f), sep=&quot;\t&quot;)
+
+pct &lt;- nrow(d) / nrow(d_input)
+cdr3 &lt;-lapply(
+    d$trimmed_input_sequence,
+    function(x) d_input$Beta_cdr3[grepl(x, d_input$Beta_cdr3, fixed = TRUE)]
+    )
+cdr3 &lt;- lapply(cdr3, function(x) x[1])
+d$cdr3 &lt;- unlist(cdr3)
+d &lt;- d %&gt;% left_join(d_input, by = c(&quot;cdr3&quot; = &quot;Beta_cdr3&quot;))
+prty &lt;- purity(d$Epitope, d$epitope)$pur
+ari &lt;- ARI(d$Epitope, d$epitope)
+nmi &lt;- NMI(d$Epitope, d$epitope)
+
+tcrmatch_measure &lt;- list(pct, prty, ari, nmi)
+</pre></div>
+</div>
+</section>
+<section id="create-the-plot">
+<h2>Create the plot<a class="headerlink" href="#create-the-plot" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># combine the results 
+measure_l &lt;- list(
+  tcrex_measure, ismart_measure, gliph2_measure, sete_measure, clustcr_measure, 
+  giana_measure, nettcr_measure, pmtnet_measure, tcrbert_measure, tcrmatch_measure, 
+  tcrdist3_measure
+)
+names(measure_l) &lt;- c(&quot;TCRex&quot;, &quot;iSMART&quot;, &quot;GLIPH2&quot;, &quot;SETE&quot;, &quot;clusTCR&quot;, &quot;GIANA&quot;, 
+                      &quot;NetTCR&quot;, &quot;pMTnet&quot;, &quot;TCR-BER&quot;, &quot;TCRMatch&quot;, &quot;tcrdist3&quot;)
+measure_l &lt;- lapply(measure_l, function(x) {names(x) &lt;- c(&quot;Percentage&quot;, &quot;Purity&quot;, &quot;ARI&quot;, &quot;NMI&quot;); x})
+measure_l &lt;- lapply(measure_l, function(x) as.data.frame(do.call(cbind, x)))
+measure_l &lt;- lapply(seq(measure_l), function(x) {measure_l[[x]]$Method &lt;- names(measure_l)[x]; measure_l[[x]]})
+
+measure_d &lt;- do.call(rbind, measure_l)
+measure_d &lt;- measure_d[measure_d$NMI != &quot;NaN&quot;, ]
+measure_d$`Percentage` &lt;- as.numeric(measure_d$`Percentage`)
+measure_d$Purity &lt;- as.numeric(measure_d$Purity)
+measure_d$ARI &lt;- as.numeric(measure_d$ARI)
+measure_d$NMI &lt;- as.numeric(measure_d$NMI)
+
+# set the colors 
+colscale &lt;- scale_fill_manual(
+  values = c( &quot;clusTCR&quot; = &quot;#FED789FF&quot;, &quot;GIANA&quot; = &quot;#E64B35FF&quot;, &quot;GLIPH2&quot; = &quot;#4DBBD5FF&quot;, &quot;iSMART&quot; = &quot;#00A087FF&quot;, 
+             &quot;NetTCR&quot; = &quot;#3C5488FF&quot;,&quot;pMTnet&quot; = &quot;#F39B7FFF&quot;, &quot;SETE&quot; = &quot;#8491B4FF&quot;,
+             &quot;TCR-BERT&quot; = &quot;#91D1C2FF&quot;, &quot;tcrdist3&quot; = &quot;#DC0000FF&quot;, &quot;TCRex&quot; = &quot;#7E6148FF&quot;,
+             &quot;TCRMatch&quot; = &quot;#B09C85FF&quot;)
+  )
+# bar plot 
+measure_d_long &lt;- reshape2::melt(measure_d)
+ggplot(measure_d_long) + 
+	geom_col(aes(x=variable, y=value, fill=Method), position=&quot;dodge&quot;) + 
+         colscale + 
+         theme_classic() + 
+      	 theme(axis.text.x = element_text(size=12),
+	 	axis.text.y = element_text(size=12),
+            	axis.title.x = element_blank(), 
+            	axis.title.y = element_blank(), legend.position = &quot;none&quot;)
+	
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Tool%20application.html" class="btn btn-neutral float-left" title="GIANA and ClusTCR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

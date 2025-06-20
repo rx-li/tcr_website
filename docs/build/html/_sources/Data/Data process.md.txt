@@ -1,7 +1,5 @@
-# Data process
-
-## Database
-### IEDB datasets
+# Database
+## IEDB datasets
 All the IEDB datasets were downloaded from https://www.iedb.org/. The parameters for each datasets are as following. 
  **Human infectious dataset** 
  ```
@@ -62,7 +60,7 @@ for(i in seq(f)){
   iedb_data[[i]] <- d_f
 }
 ```
-### McPAS dataset (cancer VS. non-cancer)
+## McPAS dataset (cancer VS. non-cancer)
 The dataset was downloaded from https://friedmanlab.weizmann.ac.il/McPAS-TCR/. 
 
 **McPAS data processing**
@@ -79,12 +77,12 @@ d <- d[!duplicated(d$CDR3.beta.aa), ]
 d_cancer <- d[d$Category == "Cancer", ]
 d_noncancer <- d[d$Category != "Cancer", ]
 ```
-### VDJdb dataset (Human influenza, SARS-cov-2, CMV, and mouse)
+## VDJdb dataset (Human influenza, SARS-cov-2, CMV, and mouse)
 The data set was downloaded from https://vdjdb.cdr3.net/.
 
 **VDJdb data processing**
 ```
-## vdjdb
+# vdjdb
 d <- read.csv("../datasets/vdjdb_full.txt", sep="\t")
 d <- d[d$cdr3.alpha != "", ]
 d <- d[d$cdr3.beta != "", ]
@@ -100,8 +98,8 @@ vdj_human_data[["CMV"]] <- d_f[d_f$antigen.species == "CMV", ]
 vdj_mouse_data <- d[d$species == "MusMusculus", ]
 ```
 
-## Real data 
-### 10x nsclc
+# Real data 
+## 10x nsclc
 ```
 d <- read.csv("../datasets/vdj_v1_hs_nsclc_t_all_contig_annotations.csv")
 d <- d[d$cdr3 != "None", ]
@@ -111,7 +109,7 @@ d_new <- d_beta %>% left_join(d_alpha, join_by(barcode))
 d_new <- d_new[!duplicated(d_new$cdr3.x), ]
 human_nsclc <- na.omit(d_new)
 ```
-### Su covid-19 
+## Su covid-19 
 ```
 d <- read.csv("../datasets/su_TCR_cd8_AllPatients.csv")
 d <- d[d$TRB_cdr3 != "None", ]
@@ -122,7 +120,7 @@ set.seed(2333)
 d <- d[sample(nrow(d), 10000), ]
 su_covid19 <- d
 ```
-### Zheng pancancer
+## Zheng pancancer
 ```
 d <- read.csv("../datasets/zheng_pancancer.txt", sep="\t")
 d <- d[d$cdr3 != "None", ]
@@ -135,7 +133,7 @@ set.seed(2333)
 d_new <- d_new[sample(nrow(d_new), 10000), ]
 zheng_pancancer <- d_new
 ```
-### ctcl
+## ctcl
 ```
 d <- read.csv("../datasets/CTCL-TCRab.csv")
 d <- d[d$cdr3 != "None", ]
@@ -145,7 +143,7 @@ d_new <- na.omit(d_beta %>% left_join(d_alpha, join_by(barcode)))
 d_new <- d_new[!duplicated(d_new$cdr3.x), ]
 mimitou_ctcl <- d_new
 ```
-### Breast
+## Breast
 ```
 d <- read.csv("../datasets/azizi_breasttumor.csv")
 d <- d[d$cdr3 != "None", ]
@@ -155,7 +153,7 @@ d_new <- na.omit(d_beta %>% left_join(d_alpha, join_by(barcode)))
 d_new <- d_new[!duplicated(d_new$cdr3.x), ]
 azizi_breast <- d_new
 ```
-### Longitudianl melanoma
+## Longitudianl melanoma
 ```
 
 ```

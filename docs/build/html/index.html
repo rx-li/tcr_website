@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TCR Clustering Benchmarking Code &mdash; TCR Clustering Benchmark  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data process" href="Data/Data%20process.html" /> 
+    <link rel="next" title="Database" href="Data/Data%20process.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,11 +43,25 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Data Process:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Data/Data%20process.html">Data process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Data%20process.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Data%20process.html#real-data">Real data</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tool application:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html">Tool application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html">GIANA and ClusTCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#gliph2">GLIPH2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrex">TCRex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrbase">TCRbase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrmatch">TCRMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#pmtnet">pMTnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#sete">SETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrdist3">tcrdist3</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Results process:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data/Simulation%20results%20process.html">simulation results process</a></li>
 </ul>
 
         </div>
@@ -81,9 +95,19 @@ for benchmarking T Cell Receptor (TCR) Clustering tools.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Data Process:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Data/Data%20process.html">Data process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#database">Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#real-data">Real data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Data%20process.html">Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#iedb-datasets">IEDB datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#mcpas-dataset-cancer-vs-non-cancer">McPAS dataset (cancer VS. non-cancer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#vdjdb-dataset-human-influenza-sars-cov-2-cmv-and-mouse">VDJdb dataset (Human influenza, SARS-cov-2, CMV, and mouse)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Data%20process.html#real-data">Real data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#x-nsclc">10x nsclc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#su-covid-19">Su covid-19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#zheng-pancancer">Zheng pancancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#ctcl">ctcl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#breast">Breast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Data%20process.html#longitudianl-melanoma">Longitudianl melanoma</a></li>
 </ul>
 </li>
 </ul>
@@ -91,10 +115,35 @@ for benchmarking T Cell Receptor (TCR) Clustering tools.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Tool application:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html">Tool application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Data/Tool%20application.html#giana">GIANA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Data/Tool%20application.html#tcrex">TCRex</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Data/Tool%20application.html#tcrbase">tcrbase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html">GIANA and ClusTCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#gliph2">GLIPH2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrex">TCRex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrbase">TCRbase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrmatch">TCRMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#pmtnet">pMTnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#sete">SETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data/Tool%20application.html#tcrdist3">tcrdist3</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Results process:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data/Simulation%20results%20process.html">simulation results process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#set-up-the-code-before-we-process-the-result-from-each-tool">Set up the code before we process the result from each tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#giana">GIANA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#ismart">iSMART</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#clusttcr">clustTCR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#tcrex">TCRex</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#gliph2">GLIPH2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#pmtnet">pMTnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#sete">SETE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#tcrdist3">tcrdist3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#tcrmatch">TCRmatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data/Simulation%20results%20process.html#create-the-plot">Create the plot</a></li>
 </ul>
 </li>
 </ul>
@@ -105,7 +154,7 @@ for benchmarking T Cell Receptor (TCR) Clustering tools.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Data/Data%20process.html" class="btn btn-neutral float-right" title="Data process" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Data/Data%20process.html" class="btn btn-neutral float-right" title="Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

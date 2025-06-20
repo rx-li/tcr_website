@@ -6,8 +6,8 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tool application &mdash; TCR Clustering Benchmark  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+  <title>GIANA and ClusTCR &mdash; TCR Clustering Benchmark  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
@@ -19,7 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Data process" href="Data%20process.html" /> 
+    <link rel="next" title="Set up the code before we process the result from each tool" href="Simulation%20results%20process.html" />
+    <link rel="prev" title="Database" href="Data%20process.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,16 +44,37 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Data Process:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Data%20process.html">Data process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20process.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data%20process.html#real-data">Real data</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tool application:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tool application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#giana">GIANA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tcrex">TCRex</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tcrbase">tcrbase</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GIANA and ClusTCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#gliph2">GLIPH2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tcrex">TCRex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tcrbase">TCRbase</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tcrmatch">TCRMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#pmtnet">pMTnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#sete">SETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tcrdist3">tcrdist3</a></li>
 </ul>
-</li>
+<p class="caption" role="heading"><span class="caption-text">Results process:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html">Set up the code before we process the result from each tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#giana">GIANA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#ismart">iSMART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#clusttcr">clustTCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcrex">TCRex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#gliph2">GLIPH2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#pmtnet">pMTnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#sete">SETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcrdist3">tcrdist3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcrmatch">TCRmatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#create-the-plot">Create the plot</a></li>
 </ul>
 
         </div>
@@ -69,7 +91,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Tool application</li>
+      <li class="breadcrumb-item active">GIANA and ClusTCR</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Data/Tool application.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -79,15 +101,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="tool-application">
-<h1>Tool application<a class="headerlink" href="#tool-application" title="Link to this heading"></a></h1>
-<p>In this section, we will use the human infectious IEDB dataset as an example showing how we apply each tool on the data.</p>
-<section id="giana">
-<h2>GIANA<a class="headerlink" href="#giana" title="Link to this heading"></a></h2>
-<p>GIANA can be installed from https://github.com/s175573/GIANA.</p>
+  <p>In this section, we will use the human infectious IEDB dataset as an example showing how we apply each tool on the data.</p>
+<section id="giana-and-clustcr">
+<h1>GIANA and ClusTCR<a class="headerlink" href="#giana-and-clustcr" title="Link to this heading"></a></h1>
+<p>These two methods share the same input files. GIANA can be installed from <a class="reference external" href="https://github.com/s175573/GIANA">https://github.com/s175573/GIANA</a>.
+iSMART can be installed from <a class="reference external" href="https://github.com/s175573/iSMART">https://github.com/s175573/iSMART</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
 tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
-d_giana &lt;- data.frame(aminoAcid=tmp$Beta_cdr3,	vGeneName=tmp$Beta_Vgene,	`count..templates.reads.`=1) 
+d_giana &lt;- data.frame(aminoAcid=tmp$Beta_cdr3, vGeneName=tmp$Beta_Vgene, `count..templates.reads.`=1) 
 # save the data for GIANA
 write.table(d_giana, paste0(&quot;../data/GIANA/&quot;, &quot;human_infectious&quot;, &quot;.tsv&quot;), sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
 </pre></div>
@@ -96,7 +117,13 @@ write.table(d_giana, paste0(&quot;../data/GIANA/&quot;, &quot;human_infectious&q
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">/</span><span class="n">GIANA4</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">GIANA</span><span class="o">/</span><span class="n">chuman_infectious</span><span class="o">.</span><span class="n">tsv</span> <span class="o">-</span><span class="n">o</span> <span class="o">../</span><span class="n">out</span><span class="o">/</span><span class="n">GIANA</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>##GLIPH2</p>
+<p>For iSMART, go to the installed iSMART folder and run the following code in the terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">iSMARTv3</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">f</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">GIANA</span><span class="o">/</span><span class="n">human_infectious</span><span class="o">.</span><span class="n">tsv</span> <span class="o">-</span><span class="n">o</span> <span class="o">../</span><span class="n">out</span><span class="o">/</span><span class="n">iSMART</span><span class="o">/</span>
+</pre></div>
+</div>
+</section>
+<section id="gliph2">
+<h1>GLIPH2<a class="headerlink" href="#gliph2" title="Link to this heading"></a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
 tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
 d_gliph &lt;- data.frame(CDR3b=tmp$Beta_cdr3, TRBV=tmp$Beta_Vgene, TRBJ=tmp$Beta_Jgene, CDR3a=tmp$Alpha_cdr3,
@@ -109,7 +136,7 @@ write.table(d_gliph, paste0(&quot;../data/GLIPH2/&quot;, &quot;human_infectious&
 <p>We run GLIPH2 through its website at <a class="reference external" href="http://50.255.35.37:8080/">http://50.255.35.37:8080/</a>.</p>
 </section>
 <section id="tcrex">
-<h2>TCRex<a class="headerlink" href="#tcrex" title="Link to this heading"></a></h2>
+<h1>TCRex<a class="headerlink" href="#tcrex" title="Link to this heading"></a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
 tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
 d_tcrex &lt;- data.frame(CDR3_beta=tmp$Beta_cdr3,	TRBJ_gene=tmp$Beta_Jgene,	TRBV_gene=tmp$Beta_Vgene) 
@@ -120,15 +147,219 @@ write.table(d_tcrex, paste0(&quot;../data/TCRex/&quot;, &quot;human_infectious&q
 <p>We run TCRex through its website at <a class="reference external" href="https://tcrex.biodatamining.be/">https://tcrex.biodatamining.be/</a>.</p>
 </section>
 <section id="tcrbase">
-<h2>tcrbase<a class="headerlink" href="#tcrbase" title="Link to this heading"></a></h2>
+<h1>TCRbase<a class="headerlink" href="#tcrbase" title="Link to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_tcrbase &lt;- data.frame(cdr1a=tmp$Alpha_cdr1, cdr2a=tmp$Alpha_cdr2, cdr3a=tmp$Alpha_cdr3,
+                          cdr1b=tmp$Beta_cdr1, cdr2b=tmp$Beta_cdr2, cdr3b=tmp$Beta_cdr3) %&gt;% 
+    distinct(cdr3b, .keep_all = TRUE)
+d_tcrbase$cdr1a = &quot;XXXXX&quot;
+d_tcrbase$cdr2a = &quot;XXXXX&quot;
+d_tcrbase$cdr1b = &quot;XXXXX&quot;
+d_tcrbase$cdr2b = &quot;XXXXX&quot;
+write.table(d_tcrbase, paste0(&quot;../data/TCRbase/&quot;, &quot;human_infectious&quot;, &quot;.tsv&quot;), 
+              sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>We run TCRbase through its website at <a class="reference external" href="https://services.healthtech.dtu.dk/services/TCRbase-1.0/">https://services.healthtech.dtu.dk/services/TCRbase-1.0/</a>.</p>
 </section>
+<section id="tcr-bert">
+<h1>TCR-BERT<a class="headerlink" href="#tcr-bert" title="Link to this heading"></a></h1>
+<p>TCR-BERT can be installed from <a class="reference external" href="https://github.com/wukevin/tcr-bert">https://github.com/wukevin/tcr-bert</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_tcrbert &lt;- data.frame(cdr3b=tmp$Beta_cdr3) %&gt;% 
+    distinct(cdr3b, .keep_all = TRUE)
+d_tcrbert$group &lt;- 1
+write.table(d_tcrbert, paste0(&quot;../data/TCRbert/&quot;, &quot;human_infectious&quot;, &quot;.tsv&quot;), 
+              sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>Then go to the installed TCR-BERT folder, and run the following code in the terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">embed_and_cluster</span><span class="o">.</span><span class="n">py</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">TCRbert</span><span class="o">/</span><span class="n">human_infectious</span><span class="o">.</span><span class="n">tsv</span> <span class="o">../</span><span class="n">out</span><span class="o">/</span><span class="n">TCRbert</span><span class="o">/</span><span class="n">human_infectious</span><span class="o">.</span><span class="n">tsv</span> <span class="o">-</span><span class="n">r</span> <span class="mi">32</span> <span class="o">-</span><span class="n">g</span> <span class="mi">0</span>
+
+</pre></div>
+</div>
+</section>
+<section id="tcrmatch">
+<h1>TCRMatch<a class="headerlink" href="#tcrmatch" title="Link to this heading"></a></h1>
+<p>TCRMatch can be installed from <a class="reference external" href="https://github.com/IEDB/TCRMatch">https://github.com/IEDB/TCRMatch</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_tcrmatch &lt;- unique(tmp$Beta_cdr3)
+write.table(d_tcrmatch, paste0(&quot;../data/TCRMatch/&quot;, &quot;human_infectious&quot;, &quot;.txt&quot;), 
+              sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE, col.names = FALSE)
+</pre></div>
+</div>
+<p>Then go to the installed TCRMatch folder, and run the following code in the terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="pmtnet">
+<h1>pMTnet<a class="headerlink" href="#pmtnet" title="Link to this heading"></a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_pmtnet_v1 &lt;- data.frame(CDR3=tmp$Beta_cdr3, Antigen=tmp$Epitope, HLA=tmp$MHC) %&gt;% 
+    distinct(CDR3, .keep_all = TRUE)
+
+d_pmtnet_v1 &lt;- d_pmtnet_v1[!d_pmtnet_v1$HLA %like% &quot;human&quot;, ]
+d_pmtnet_v1$HLA &lt;- gsub(&quot;\\,.*&quot;, &quot;&quot;, d_pmtnet_v1$HLA)
+d_pmtnet_v1$HLA &lt;- gsub(&quot;HLA-&quot;, &quot;&quot;, d_pmtnet_v1$HLA)
+d_pmtnet_v1 &lt;- d_pmtnet_v1[!d_pmtnet_v1$HLA %like% &quot; &quot;, ]
+d_pmtnet_v1 &lt;- d_pmtnet_v1[!d_pmtnet_v1$HLA %like% &quot;\\/&quot;, ]
+d_pmtnet_v1 &lt;- d_pmtnet_v1 %&gt;% arrange(desc(HLA))
+d_pmtnet_v1 &lt;- na.omit(d_pmtnet_v1)
+  
+table &lt;- as.data.frame(table(d_pmtnet_v1$Antigen)) %&gt;% arrange(desc(Freq))
+d_pmtnet_v1 &lt;- d_pmtnet_v1[d_pmtnet_v1$Antigen %in% table$Var1[1:10], ]
+out &lt;- d_pmtnet_v1[rep(seq_len(nrow(d_pmtnet_v1)), each = 10), ]
+out$Antigen &lt;- rep(table$Var1[1:10], nrow(d_pmtnet_v1))
+write.csv(out, paste0(&quot;../data/pMTnet/&quot;, &quot;human_infectious&quot;, &quot;.csv&quot;), 
+            row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>We run the pMTnet through its website at <a class="reference external" href="https://dbai.biohpc.swmed.edu/pmtnet/analysis-base.php">https://dbai.biohpc.swmed.edu/pmtnet/analysis-base.php</a>.</p>
+</section>
+<section id="sete">
+<h1>SETE<a class="headerlink" href="#sete" title="Link to this heading"></a></h1>
+<p>SETE can be installed from <a class="reference external" href="https://github.com/wonanut/SETE">https://github.com/wonanut/SETE</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_sete &lt;- na.omit(data.frame(epitope=tmp$Epitope, vb_gene=tmp$Beta_Vgene, cdr3b=tmp$Beta_cdr3)) 
+</pre></div>
+</div>
+<p>Then go to the installed SETE folder, we can run the following Python code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">SETE</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">KFold</span><span class="p">,</span> <span class="n">StratifiedKFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">label_binarize</span>
+<span class="kn">from</span> <span class="nn">sklearn.multiclass</span> <span class="kn">import</span> <span class="n">OneVsRestClassifier</span><span class="p">,</span> <span class="n">OneVsOneClassifier</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interp</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">clone</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span><span class="p">,</span> <span class="n">KernelPCA</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_decomposition</span> <span class="kn">import</span> <span class="n">CCA</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectKBest</span><span class="p">,</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;../data/SETE&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epiname_list</span> <span class="o">=</span> <span class="n">data_preprocess</span><span class="p">(</span><span class="s2">&quot;../data/SETE/&quot;</span> <span class="o">+</span> <span class="n">file</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.35</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">666</span><span class="p">)</span>
+    <span class="n">classifier</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                                        <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="s1">&#39;sqrt&#39;</span><span class="p">,</span> <span class="n">subsample</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+                                        <span class="n">random_state</span><span class="o">=</span><span class="mi">666</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
+                                        <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s2">&quot;log_loss&quot;</span>
+                                        <span class="p">)</span>
+
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">pca_analyse</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">classifier</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+    <span class="n">pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">])</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../out/SETE/&quot;</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="nettcr2-0">
+<h1>NetTCR2.0<a class="headerlink" href="#nettcr2-0" title="Link to this heading"></a></h1>
+<p>The NetTCR can be installed from <a class="reference external" href="https://github.com/mnielLab/NetTCR-2.0">https://github.com/mnielLab/NetTCR-2.0</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+tmp &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+d_tmp &lt;- data.frame(CDR3a=sub(&quot;.&quot;, &quot;&quot;, tmp$Alpha_cdr3),
+                      CDR3b=sub(&quot;.&quot;, &quot;&quot;, tmp$Beta_cdr3), 
+                      peptide=tmp$Epitope)
+d_tmp &lt;- d_tmp[!grepl(&quot; &quot;, d_tmp$peptide), ]
+d_tmp &lt;- d_tmp[!grepl(&quot;-&quot;, d_tmp$peptide), ]
+d_tmp &lt;- d_tmp[!grepl(&quot;#&quot;, d_tmp$CDR3a), ]
+d_tmp &lt;- d_tmp[d_tmp$peptide != &quot;carbamazepine&quot;, ]
+d_tmp &lt;- d_tmp[!grepl(&quot;X&quot;, d_tmp$CDR3a), ]
+d_tmp &lt;- d_tmp[!grepl(&quot;\\*&quot;, d_tmp$CDR3a), ]
+d_tmp &lt;- na.omit(d_tmp)
+n_train &lt;- nrow(d_tmp) * 0.65
+idx &lt;- sample(seq(nrow(d_tmp)), round(n_train))
+d_train &lt;- d_tmp[idx, ]
+d_train$binder &lt;- 0
+d_test &lt;- d_tmp[-idx, ]
+d_test &lt;- d_test[nchar(d_test$peptide) &lt;= 9,]
+d_train &lt;- d_train[d_train$peptide %in% d_test$peptide, ]
+d_test &lt;- d_test[d_test$peptide %in% d_train$peptide, ]
+
+write.table(d_train, paste0(&quot;../data/NetTCR/train_&quot;, &quot;human_infectious&quot;, &quot;.csv&quot;), 
+              sep = &quot;,&quot;, row.names = FALSE, quote = FALSE)
+write.table(d_test, paste0(&quot;../data/NetTCR/test_&quot;, &quot;human_infectious&quot;, &quot;.csv&quot;), 
+              sep = &quot;,&quot;, row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>Then we can go to the installed NetTCR folder and run the following code in the terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">NetTCR</span><span class="o">-</span><span class="mf">2.0</span><span class="o">/</span><span class="n">nettcr</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">trainfile</span> <span class="o">../</span><span class="n">data</span><span class="o">/</span><span class="n">NetTCR</span><span class="o">/</span><span class="n">train_human_infectious</span><span class="o">.</span><span class="n">csv</span> <span class="o">--</span><span class="n">test</span> <span class="o">../</span><span class="n">data_new</span><span class="o">/</span><span class="n">NetTCR</span><span class="o">/</span><span class="n">test_human_infectious</span><span class="o">.</span><span class="n">csv</span>
+ <span class="o">-</span><span class="n">o</span> <span class="o">../</span><span class="n">out</span><span class="o">/</span><span class="n">NetTCR</span><span class="o">/</span><span class="n">human_infectious</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+</section>
+<section id="tcrdist3">
+<h1>tcrdist3<a class="headerlink" href="#tcrdist3" title="Link to this heading"></a></h1>
+<p>Please refer to this website <a class="reference external" href="https://tcrdist3.readthedocs.io/en/latest/">https://tcrdist3.readthedocs.io/en/latest/</a> for tcrdist3.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># read the processed IEDB file
+d_f &lt;- readRDS(&quot;path_to_IEDB_data&quot;)
+tmp &lt;- data.frame(subject=d_f$IEDB_id, epitope=d_f$Epitope, count=1, 
+                                v_a_gene=d_f$Alpha_Vgene, j_a_gene=d_f$Alpha_Jgene,
+                                cdr3_a_aa=d_f$Alpha_cdr3, v_b_gene=d_f$Beta_Vgene, 
+                                j_b_gene=d_f$Beta_Jgene, cdr3_b_aa=d_f$Beta_cdr3) %&gt;%
+    distinct(cdr3_b_aa, .keep_all = TRUE) %&gt;%
+    distinct(cdr3_a_aa, .keep_all = TRUE)
+tmp &lt;- tmp[nchar(tmp$epitope) &lt;= 9,]
+d_tcrdist3 &lt;- tmp
+d_tcrdist3$clone_id &lt;- seq(nrow(d_tcrdist3))
+write.table(d_tcrdist3, paste0(&quot;../data/tcrdist3/&quot;, &quot;human_infectious&quot;, &quot;.tsv&quot;), 
+              sep = &quot;\t&quot;, row.names = FALSE, quote = FALSE)
+</pre></div>
+</div>
+<p>Then we can run the following python code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">tcrdist.repertoire</span> <span class="kn">import</span> <span class="n">TCRrep</span>
+<span class="kn">from</span> <span class="nn">tcrdist.tree</span> <span class="kn">import</span> <span class="n">TCRtree</span>
+<span class="kn">import</span> <span class="nn">pwseqdist</span> <span class="k">as</span> <span class="nn">pw</span>
+<span class="kn">from</span> <span class="nn">tcrdist.rep_diff</span> <span class="kn">import</span> <span class="n">neighborhood_diff</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;../../data/tcrdist3/&quot;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">tr</span> <span class="o">=</span> <span class="n">TCRrep</span><span class="p">(</span><span class="n">cell_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> 
+            <span class="n">organism</span> <span class="o">=</span> <span class="s1">&#39;mouse&#39;</span><span class="p">,</span> 
+            <span class="n">chains</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;beta&#39;</span><span class="p">],</span> 
+            <span class="n">db_file</span> <span class="o">=</span> <span class="s1">&#39;alphabeta_gammadelta_db.tsv&#39;</span><span class="p">)</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">pw_beta</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">AgglomerativeClustering</span><span class="p">(</span><span class="n">affinity</span><span class="o">=</span><span class="s1">&#39;precomputed&#39;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linkage</span><span class="o">=</span><span class="s1">&#39;complete&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">clone_df</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">labels_</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">clone_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;../out/tcrdist3/&quot;</span> <span class="o">+</span> <span class="n">file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Data%20process.html" class="btn btn-neutral float-left" title="Data process" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Data%20process.html" class="btn btn-neutral float-left" title="Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Simulation%20results%20process.html" class="btn btn-neutral float-right" title="Set up the code before we process the result from each tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

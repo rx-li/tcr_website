@@ -1,8 +1,6 @@
-# Tool application
-
 In this section, we will use the human infectious IEDB dataset as an example showing how we apply each tool on the data. 
 
-## GIANA and ClusTCR
+# GIANA and ClusTCR
 These two methods share the same input files. GIANA can be installed from <https://github.com/s175573/GIANA>. 
 iSMART can be installed from <https://github.com/s175573/iSMART>. 
 ```
@@ -21,7 +19,7 @@ For iSMART, go to the installed iSMART folder and run the following code in the 
 python iSMARTv3.py -f ../data/GIANA/human_infectious.tsv -o ../out/iSMART/
 ```
 
-## GLIPH2
+# GLIPH2
 ```
 # read the processed IEDB file
 tmp <- readRDS("path_to_IEDB_data")
@@ -33,7 +31,7 @@ write.table(d_gliph, paste0("../data/GLIPH2/", "human_infectious", ".tsv"),
 ```
 We run GLIPH2 through its website at <http://50.255.35.37:8080/>. 
 
-## TCRex
+# TCRex
 ```
 # read the processed IEDB file
 tmp <- readRDS("path_to_IEDB_data")
@@ -43,7 +41,7 @@ write.table(d_tcrex, paste0("../data/TCRex/", "human_infectious", ".tsv"),
 ```
 We run TCRex through its website at <https://tcrex.biodatamining.be/>.
 
-## TCRbase
+# TCRbase
 ```
 # read the processed IEDB file
 tmp <- readRDS("path_to_IEDB_data")
@@ -59,7 +57,7 @@ write.table(d_tcrbase, paste0("../data/TCRbase/", "human_infectious", ".tsv"),
 ```
 We run TCRbase through its website at <https://services.healthtech.dtu.dk/services/TCRbase-1.0/>. 
 
-## TCR-BERT
+# TCR-BERT
 TCR-BERT can be installed from <https://github.com/wukevin/tcr-bert>.
 ```
 # read the processed IEDB file
@@ -75,7 +73,7 @@ Then go to the installed TCR-BERT folder, and run the following code in the term
 python bin/embed_and_cluster.py ../data/TCRbert/human_infectious.tsv ../out/TCRbert/human_infectious.tsv -r 32 -g 0
 
 ```
-## TCRMatch
+# TCRMatch
 TCRMatch can be installed from <https://github.com/IEDB/TCRMatch>.
 ```
 # read the processed IEDB file
@@ -87,7 +85,7 @@ write.table(d_tcrmatch, paste0("../data/TCRMatch/", "human_infectious", ".txt"),
 Then go to the installed TCRMatch folder, and run the following code in the terminal. 
 ```
 ```
-## pMTnet
+# pMTnet
 ```
 # read the processed IEDB file
 tmp <- readRDS("path_to_IEDB_data")
@@ -111,7 +109,7 @@ write.csv(out, paste0("../data/pMTnet/", "human_infectious", ".csv"),
 ```
 We run the pMTnet through its website at <https://dbai.biohpc.swmed.edu/pmtnet/analysis-base.php>.
 
-## SETE
+# SETE
 SETE can be installed from <https://github.com/wonanut/SETE>. 
 ```
 # read the processed IEDB file
@@ -161,7 +159,7 @@ for file in f:
     result = pd.DataFrame(np.array([pred, y_test]).T, columns=["pred", "true"])
     result.to_csv("../out/SETE/" + file)
 ```
-## NetTCR2.0
+# NetTCR2.0
 The NetTCR can be installed from <https://github.com/mnielLab/NetTCR-2.0>. 
 ```
 # read the processed IEDB file
@@ -195,7 +193,7 @@ Then we can go to the installed NetTCR folder and run the following code in the 
 python NetTCR-2.0/nettcr.py --trainfile ../data/NetTCR/train_human_infectious.csv --test ../data_new/NetTCR/test_human_infectious.csv
  -o ../out/NetTCR/human_infectious.csv
 ```
-## tcrdist3
+# tcrdist3
 Please refer to this website <https://tcrdist3.readthedocs.io/en/latest/> for tcrdist3. 
 ```
 # read the processed IEDB file

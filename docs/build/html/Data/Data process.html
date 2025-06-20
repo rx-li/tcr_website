@@ -6,8 +6,8 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data process &mdash; TCR Clustering Benchmark  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+  <title>Database &mdash; TCR Clustering Benchmark  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
@@ -44,28 +44,41 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Data Process:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Data process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#database">Database</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#iedb-datasets">IEDB datasets</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mcpas-dataset-cancer-vs-non-cancer">McPAS dataset (cancer VS. non-cancer)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vdjdb-dataset-human-influenza-sars-cov-2-cmv-and-mouse">VDJdb dataset (Human influenza, SARS-cov-2, CMV, and mouse)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#iedb-datasets">IEDB datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mcpas-dataset-cancer-vs-non-cancer">McPAS dataset (cancer VS. non-cancer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vdjdb-dataset-human-influenza-sars-cov-2-cmv-and-mouse">VDJdb dataset (Human influenza, SARS-cov-2, CMV, and mouse)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#real-data">Real data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#x-nsclc">10x nsclc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#su-covid-19">Su covid-19</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#zheng-pancancer">Zheng pancancer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ctcl">ctcl</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#breast">Breast</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#longitudianl-melanoma">Longitudianl melanoma</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="#real-data">Real data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#x-nsclc">10x nsclc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#su-covid-19">Su covid-19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zheng-pancancer">Zheng pancancer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ctcl">ctcl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#breast">Breast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#longitudianl-melanoma">Longitudianl melanoma</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tool application:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Tool%20application.html">Tool application</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Results process:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html">Set up the code before we process the result from each tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#giana">GIANA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#ismart">iSMART</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#clusttcr">clustTCR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcrex">TCRex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#gliph2">GLIPH2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcr-bert">TCR-BERT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#pmtnet">pMTnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#sete">SETE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#nettcr2-0">NetTCR2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcrdist3">tcrdist3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#tcrmatch">TCRmatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation%20results%20process.html#create-the-plot">Create the plot</a></li>
 </ul>
 
         </div>
@@ -82,7 +95,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Data process</li>
+      <li class="breadcrumb-item active">Database</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Data/Data process.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -92,12 +105,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="data-process">
-<h1>Data process<a class="headerlink" href="#data-process" title="Link to this heading"></a></h1>
-<section id="database">
-<h2>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h2>
+  <section id="database">
+<h1>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h1>
 <section id="iedb-datasets">
-<h3>IEDB datasets<a class="headerlink" href="#iedb-datasets" title="Link to this heading"></a></h3>
+<h2>IEDB datasets<a class="headerlink" href="#iedb-datasets" title="Link to this heading"></a></h2>
 <p>All the IEDB datasets were downloaded from https://www.iedb.org/. The parameters for each datasets are as following.
 <strong>Human infectious dataset</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Include</span> <span class="n">Positive</span> <span class="n">Assays</span>
@@ -160,7 +171,7 @@ for(i in seq(f)){
 </div>
 </section>
 <section id="mcpas-dataset-cancer-vs-non-cancer">
-<h3>McPAS dataset (cancer VS. non-cancer)<a class="headerlink" href="#mcpas-dataset-cancer-vs-non-cancer" title="Link to this heading"></a></h3>
+<h2>McPAS dataset (cancer VS. non-cancer)<a class="headerlink" href="#mcpas-dataset-cancer-vs-non-cancer" title="Link to this heading"></a></h2>
 <p>The dataset was downloaded from https://friedmanlab.weizmann.ac.il/McPAS-TCR/.</p>
 <p><strong>McPAS data processing</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>d &lt;- read.csv(&quot;../datasets/McPAS-TCR.csv&quot;)
@@ -178,10 +189,10 @@ d_noncancer &lt;- d[d$Category != &quot;Cancer&quot;, ]
 </div>
 </section>
 <section id="vdjdb-dataset-human-influenza-sars-cov-2-cmv-and-mouse">
-<h3>VDJdb dataset (Human influenza, SARS-cov-2, CMV, and mouse)<a class="headerlink" href="#vdjdb-dataset-human-influenza-sars-cov-2-cmv-and-mouse" title="Link to this heading"></a></h3>
+<h2>VDJdb dataset (Human influenza, SARS-cov-2, CMV, and mouse)<a class="headerlink" href="#vdjdb-dataset-human-influenza-sars-cov-2-cmv-and-mouse" title="Link to this heading"></a></h2>
 <p>The data set was downloaded from https://vdjdb.cdr3.net/.</p>
 <p><strong>VDJdb data processing</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## vdjdb
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># vdjdb
 d &lt;- read.csv(&quot;../datasets/vdjdb_full.txt&quot;, sep=&quot;\t&quot;)
 d &lt;- d[d$cdr3.alpha != &quot;&quot;, ]
 d &lt;- d[d$cdr3.beta != &quot;&quot;, ]
@@ -200,9 +211,9 @@ vdj_mouse_data &lt;- d[d$species == &quot;MusMusculus&quot;, ]
 </section>
 </section>
 <section id="real-data">
-<h2>Real data<a class="headerlink" href="#real-data" title="Link to this heading"></a></h2>
+<h1>Real data<a class="headerlink" href="#real-data" title="Link to this heading"></a></h1>
 <section id="x-nsclc">
-<h3>10x nsclc<a class="headerlink" href="#x-nsclc" title="Link to this heading"></a></h3>
+<h2>10x nsclc<a class="headerlink" href="#x-nsclc" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>d &lt;- read.csv(&quot;../datasets/vdj_v1_hs_nsclc_t_all_contig_annotations.csv&quot;)
 d &lt;- d[d$cdr3 != &quot;None&quot;, ]
 d_alpha &lt;- d[d$chain == &quot;TRA&quot;, ]
@@ -214,7 +225,7 @@ human_nsclc &lt;- na.omit(d_new)
 </div>
 </section>
 <section id="su-covid-19">
-<h3>Su covid-19<a class="headerlink" href="#su-covid-19" title="Link to this heading"></a></h3>
+<h2>Su covid-19<a class="headerlink" href="#su-covid-19" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>d &lt;- read.csv(&quot;../datasets/su_TCR_cd8_AllPatients.csv&quot;)
 d &lt;- d[d$TRB_cdr3 != &quot;None&quot;, ]
 d &lt;- d[d$TRA_cdr3 != &quot;None&quot;, ]
@@ -227,7 +238,7 @@ su_covid19 &lt;- d
 </div>
 </section>
 <section id="zheng-pancancer">
-<h3>Zheng pancancer<a class="headerlink" href="#zheng-pancancer" title="Link to this heading"></a></h3>
+<h2>Zheng pancancer<a class="headerlink" href="#zheng-pancancer" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>d &lt;- read.csv(&quot;../datasets/zheng_pancancer.txt&quot;, sep=&quot;\t&quot;)
 d &lt;- d[d$cdr3 != &quot;None&quot;, ]
 d &lt;- d[d$v_gene != &quot;None&quot;, ]
@@ -242,7 +253,7 @@ zheng_pancancer &lt;- d_new
 </div>
 </section>
 <section id="ctcl">
-<h3>ctcl<a class="headerlink" href="#ctcl" title="Link to this heading"></a></h3>
+<h2>ctcl<a class="headerlink" href="#ctcl" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>d &lt;- read.csv(&quot;../datasets/CTCL-TCRab.csv&quot;)
 d &lt;- d[d$cdr3 != &quot;None&quot;, ]
 d_alpha &lt;- d[d$chain == &quot;TRA&quot;, ]
@@ -254,7 +265,7 @@ mimitou_ctcl &lt;- d_new
 </div>
 </section>
 <section id="breast">
-<h3>Breast<a class="headerlink" href="#breast" title="Link to this heading"></a></h3>
+<h2>Breast<a class="headerlink" href="#breast" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>d &lt;- read.csv(&quot;../datasets/azizi_breasttumor.csv&quot;)
 d &lt;- d[d$cdr3 != &quot;None&quot;, ]
 d_alpha &lt;- d[d$chain == &quot;TRA&quot;, ]
@@ -266,11 +277,10 @@ azizi_breast &lt;- d_new
 </div>
 </section>
 <section id="longitudianl-melanoma">
-<h3>Longitudianl melanoma<a class="headerlink" href="#longitudianl-melanoma" title="Link to this heading"></a></h3>
+<h2>Longitudianl melanoma<a class="headerlink" href="#longitudianl-melanoma" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-</section>
 </section>
 </section>
 
